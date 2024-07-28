@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amos的个人主页</title>
+    <meta name="description" content="Amos的个人主页，展示个人履历和技能。">
+    <meta name="keywords" content="Amos, 个人主页, 履历, 技能, 国际商务">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('BGP.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background-color: #f0f0f0;
         }
         .navbar {
             background-color: #333;
             overflow: hidden;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         .navbar a {
             float: left;
@@ -28,9 +33,24 @@
             background-color: #ddd;
             color: black;
         }
+        .banner {
+            width: 100%;
+            height: 300px;
+            background: url('BGP.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+        .banner h1 {
+            color: white;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+        }
         .container {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 350px; /* Adjust for banner height and navbar */
+            padding: 20px;
         }
         .profile-pic {
             width: 150px;
@@ -42,18 +62,34 @@
             padding: 20px;
             margin-top: 20px;
         }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #0070c9;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="navbar">
         <a href="index.html">首页</a>
         <a href="resume.html">了解我</a>
+        <a href="about.html">关于我</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="linkedin-icon.png" alt="LinkedIn" style="width:20px;"></a>
+        <a href="https://github.com/yourprofile" target="_blank"><img src="github-icon.png" alt="GitHub" style="width:20px;"></a>
+    </div>
+    <div class="banner">
+        <h1>Amos的个人主页</h1>
     </div>
     <div class="container">
         <img src="Home personal photo.jpg" alt="Amos个人头像" class="profile-pic">
         <h1>Hi~这里是Amos</h1>
         <p>Welcome to my website</p>
         <h2 style="color: brown">今天打算一起学点什么呢？</h2>
+        <a href="resume.html" class="button">查看我的履历</a>
     </div>
 </body>
 </html>
