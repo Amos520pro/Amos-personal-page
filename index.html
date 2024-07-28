@@ -11,7 +11,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8;
+            background-color: #f9f9f9;
             color: #333;
         }
         .navbar {
@@ -24,9 +24,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 20px;
+            padding: 0 20px;
         }
         .navbar a {
+            display: block;
             color: #f2f2f2;
             text-align: center;
             padding: 14px 20px;
@@ -41,132 +42,106 @@
             height: 300px;
             background: url('BGP.jpg') no-repeat center center;
             background-size: cover;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
         }
         .banner h1 {
             color: white;
-            font-size: 3em;
-            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .container {
             text-align: center;
+            margin-top: 50px;
             padding: 20px;
-            margin-top: 150px; /* Adjust for banner height and navbar */
         }
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            position: absolute;
-            top: 250px; /* Adjust this value to control the overlap */
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: -75px; /* Move it upwards */
             border: 5px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .content {
             padding: 20px;
-            margin-top: 100px;
-        }
-        .timer {
-            font-size: 1.2em;
-            color: #888;
             margin-top: 20px;
         }
-        .footer {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-        .to-top {
+        .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background-color: #555;
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
             cursor: pointer;
-            display: none; /* Hidden by default */
-            font-size: 16px;
+            font-size: 18px;
+            display: none;
+            z-index: 1000;
         }
-        .to-top:hover {
+        footer {
             background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
-        .to-top span {
-            margin-left: 5px;
+        .timer {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="nav-left">
-                <a href="index.html">首页</a>
-                <a href="resume.html">个人履历</a>
-                <a href="about.html">关于我</a>
-            </div>
+            <a href="index.html">首页</a>
+            <a href="resume.html">个人履历</a>
+            <a href="about.html">关于我</a>
         </nav>
     </header>
     <div class="banner">
         <h1>Amos的个人主页</h1>
-        <img src="Home personal photo.jpg" alt="Amos个人头像" class="profile-pic">
     </div>
     <div class="container">
+        <img src="Home personal photo.jpg" alt="Amos个人头像" class="profile-pic">
         <h1>Hi~This is Amos</h1>
         <h2 style="color: brown">今天打算一起学点什么呢？</h2>
-        <div class="timer">
-            已经在此学习了：<span id="time-spent">0秒</span>
-        </div>
+        <div class="timer">已经在此学习了：<span id="time">0秒</span></div>
     </div>
-    <div class="footer">
-        <p>联系邮箱：<a href="mailto:linsq2471@gmail.com" style="color: #0070c9;">linsq2471@gmail.com</a></p>
-    </div>
-    <div class="to-top" id="toTopBtn">
-        ↑<span>TOP</span>
-    </div>
-
+    <footer>
+        联系方式: linsq2471@gmail.com
+    </footer>
+    <div class="back-to-top" id="back-to-top" onclick="scrollToTop()">&#9650; TOP</div>
     <script>
-        function updateTimeSpent() {
-            const timerElement = document.getElementById('time-spent');
-            let secondsSpent = 0;
-            setInterval(() => {
-                secondsSpent++;
-                timerElement.textContent = secondsSpent + '秒';
-            }, 1000);
-        }
+        // Timer script
+        let startTime = new Date().getTime();
+        setInterval(() => {
+            let currentTime = new Date().getTime();
+            let elapsedTime = Math.floor((currentTime - startTime) / 1000);
+            document.getElementById("time").textContent = elapsedTime + "秒";
+        }, 1000);
 
-        function scrollFunction() {
-            const toTopBtn = document.getElementById('toTopBtn');
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                toTopBtn.style.display = "block";
-            } else {
-                toTopBtn.style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0; 
-            document.documentElement.scrollTop = 0; 
-        }
-
+        // Back to top button script
         window.onscroll = function() {
-            scrollFunction();
+            let backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
         };
 
-        document.getElementById('toTopBtn').onclick = function() {
-            topFunction();
-        };
-
-        window.onload = updateTimeSpent;
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 </body>
 </html>
-
