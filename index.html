@@ -4,11 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amos的个人网站</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: brown;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    <h1 class="container">Hi~这里是Amos</h1>
-    <p>Welcome to my website</p>
-    <h2 class="highlight">今天你想了解什么内容呢？</h2>
+    <div class="navbar">
+        <a href="#home">首页</a>
+        <a href="#about">关于我</a>
+        <a href="#blog">博客</a>
+        <a href="#contact">联系我们</a>
+    </div>
+    <div class="container" id="home">
+        <h1>Hi~这里是Amos</h1>
+        <p>Welcome to my website</p>
+        <h2 class="highlight">今天你想了解什么内容呢？</h2>
+    </div>
+    <section id="about">
+        <h2>关于我</h2>
+        <p>我是Amos，一个对编程、技术和知识分享充满热情的人。在这个网站上，我会分享我的学习笔记、技术文章和个人见解。</p>
+    </section>
+    <section id="blog">
+        <h2>博客</h2>
+        <article>
+            <h3>我的第一篇文章</h3>
+            <p>这是一篇关于我最近学习的内容的文章。</p>
+            <a href="#">阅读全文</a>
+        </article>
+    </section>
+    <section id="contact">
+        <h2>联系我们</h2>
+        <p>你可以通过以下方式联系我：</p>
+        <ul>
+            <li>邮箱: amos@example.com</li>
+            <li>Twitter: <a href="https://twitter.com/amos">https://twitter.com/amos</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/amos">https://linkedin.com/in/amos</a></li>
+        </ul>
+    </section>
+    <div class="footer">
+        &copy; 2024 Amos的个人网站. All rights reserved.
+    </div>
 </body>
 </html>
