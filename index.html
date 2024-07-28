@@ -35,20 +35,16 @@
         }
         .search-container {
             float: right;
-            display: flex;
-            align-items: center;
-            margin-right: 16px;
+            padding: 8px;
         }
         .search-container input[type="text"] {
             padding: 6px;
-            margin-top: 8px;
             font-size: 17px;
             border: none;
             border-radius: 4px;
         }
         .search-container button {
             padding: 6px 10px;
-            margin-top: 8px;
             margin-left: 8px;
             background: #ddd;
             font-size: 17px;
@@ -97,6 +93,9 @@
             text-decoration: none;
             border-radius: 5px;
         }
+        .highlight {
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
@@ -106,10 +105,8 @@
             <a href="resume.html">个人履历</a>
             <a href="about.html">关于我</a>
             <div class="search-container">
-                <form action="/search" method="GET">
-                    <input type="text" placeholder="搜索.." name="search" id="searchInput">
-                    <button type="button" onclick="search()">搜索</button>
-                </form>
+                <input type="text" placeholder="搜索.." id="searchInput">
+                <button type="button" onclick="search()">搜索</button>
             </div>
         </nav>
     </header>
@@ -124,19 +121,19 @@
     </div>
     <script>
         function search() {
-            var input, filter, content, p, i, txtValue;
+            var input, filter, content, elements, i, txtValue;
             input = document.getElementById('searchInput');
             filter = input.value.toLowerCase();
-            content = document.querySelector(".container"); // Update this selector to target your content area
+            content = document.querySelector(".container");
             if (content) {
-                p = content.getElementsByTagName('*'); // Update this to include all elements
-                for (i = 0; i < p.length; i++) {
-                    txtValue = p[i].textContent || p[i].innerText;
+                elements = content.getElementsByTagName('*');
+                for (i = 0; i < elements.length; i++) {
+                    txtValue = elements[i].textContent || elements[i].innerText;
                     if (txtValue.toLowerCase().indexOf(filter) > -1) {
                         var re = new RegExp(filter, 'gi');
-                        p[i].innerHTML = txtValue.replace(re, function(match) { return '<span class="highlight">' + match + '</span>'; });
+                        elements[i].innerHTML = txtValue.replace(re, function(match) { return '<span class="highlight">' + match + '</span>'; });
                     } else {
-                        p[i].innerHTML = txtValue.replace(/<span class="highlight">(.*?)<\/span>/g, "$1"); // Remove previous highlights
+                        elements[i].innerHTML = txtValue.replace(/<span class="highlight">(.*?)<\/span>/g, "$1");
                     }
                 }
             }
