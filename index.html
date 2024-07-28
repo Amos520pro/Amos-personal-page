@@ -54,18 +54,22 @@
         .container {
             text-align: center;
             padding: 20px;
-            margin-top: 300px; /* Adjust for banner height and navbar */
+            margin-top: 150px; /* Adjust for banner height and navbar */
         }
         .profile-pic {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 20px;
+            position: absolute;
+            top: 250px; /* Adjust this value to control the overlap */
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid white;
         }
         .content {
             padding: 20px;
-            margin-top: 20px;
+            margin-top: 100px;
         }
         .timer {
             font-size: 1.2em;
@@ -113,9 +117,9 @@
     </header>
     <div class="banner">
         <h1>Amos的个人主页</h1>
+        <img src="Home personal photo.jpg" alt="Amos个人头像" class="profile-pic">
     </div>
     <div class="container">
-        <img src="Home personal photo.jpg" alt="Amos个人头像" class="profile-pic">
         <h1>Hi~This is Amos</h1>
         <h2 style="color: brown">今天打算一起学点什么呢？</h2>
         <div class="timer">
@@ -165,3 +169,4 @@
     </script>
 </body>
 </html>
+
