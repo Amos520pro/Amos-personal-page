@@ -54,7 +54,7 @@
         .container {
             text-align: center;
             padding: 20px;
-            margin-top: 350px; /* Adjust for banner height and navbar */
+            margin-top: 300px; /* Adjust for banner height and navbar */
         }
         .profile-pic {
             width: 150px;
@@ -80,6 +80,24 @@
             position: relative;
             bottom: 0;
             width: 100%;
+        }
+        .to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #555;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+            font-size: 16px;
+        }
+        .to-top:hover {
+            background-color: #333;
+        }
+        .to-top span {
+            margin-left: 5px;
         }
     </style>
 </head>
@@ -107,6 +125,9 @@
     <div class="footer">
         <p>联系邮箱：<a href="mailto:linsq2471@gmail.com" style="color: #0070c9;">linsq2471@gmail.com</a></p>
     </div>
+    <div class="to-top" id="toTopBtn">
+        ↑<span>TOP</span>
+    </div>
 
     <script>
         function updateTimeSpent() {
@@ -118,8 +139,29 @@
             }, 1000);
         }
 
+        function scrollFunction() {
+            const toTopBtn = document.getElementById('toTopBtn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                toTopBtn.style.display = "block";
+            } else {
+                toTopBtn.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0; 
+            document.documentElement.scrollTop = 0; 
+        }
+
+        window.onscroll = function() {
+            scrollFunction();
+        };
+
+        document.getElementById('toTopBtn').onclick = function() {
+            topFunction();
+        };
+
         window.onload = updateTimeSpent;
     </script>
 </body>
 </html>
-
