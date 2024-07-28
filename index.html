@@ -7,119 +7,46 @@
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #333;
-            background-color: #f8f8f8;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
             text-align: center;
+            margin-top: 50px;
         }
         .content {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             padding: 20px;
             margin-top: 20px;
-            text-align: left;
-        }
-        .card {
-            margin: 20px 0;
-        }
-        .card h3 {
-            color: #0070c9;
-        }
-        .card p {
-            color: #333;
-        }
-        .card a {
-            color: #0070c9;
-            text-decoration: none;
-        }
-        .card a:hover {
-            text-decoration: underline;
-        }
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #0070c9;
-        }
-        nav a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <div class="navbar">
+        <a href="index.html">首页</a>
+        <a href="resume.html">个人履历</a>
+    </div>
     <div class="container">
-        <img src="https://github.com/Amos520pro/Amos-personal-page/blob/main/%E5%8E%9F%E5%A4%A7%E5%B0%8F.jpg?raw=true" alt="Profile Image" class="profile-image">
         <h1>Hi~这里是Amos</h1>
         <p>Welcome to my website</p>
-        <nav>
-            <a href="#education">教育经历</a>
-            <a href="#internships">实习经历</a>
-            <a href="#projects">项目经历</a>
-            <a href="#skills">技能 / 证书</a>
-            <a href="#interests">兴趣爱好</a>
-        </nav>
-        <div class="content">
-            <h2 id="education">教育经历</h2>
-            <div class="card">
-                <h3>北京师范大学 - 国际商务 硕士</h3>
-                <p>2023.09 - 2025.06</p>
-                <p>主修课程：国际商务，经济学分析与应用，国际投资与跨国企业管理，国际金融理论与实务，国际商务谈判。</p>
-            </div>
-            <div class="card">
-                <h3>深圳大学 - 国际经济与贸易 本科</h3>
-                <p>2019.09 - 2023.06</p>
-                <p>主修课程：国际贸易理论，国际贸易实务，公司理财学，计量经济学，国际商法，商务英语，政治经济学。</p>
-            </div>
+        <h2 style="color: brown">今天你想了解什么内容呢？</h2>
+    </div>
+</body>
+</html>
 
-            <h2 id="internships">实习经历</h2>
-            <div class="card">
-                <h3>Robert Walters - 咨询顾问实习生</h3>
-                <p>2024.03 - 至今</p>
-                <p>1. 参与主要业务线的客户对接及业务拆解，辅助推进合作谈判，并根据需求进行岗位洞察与内容检索，通过mapping形成行业分析报告，为甲方招聘方向调整提供指引，侧面推动项目进程及关系搭建。</p>
-                <p>2. 通过LinkedIn等各类渠道及不同联系形式，多维度评估不同人选与岗位的软硬匹配度，及时反馈人选状态，实现日均1-2合适人选的传递，并实现约20%的有效转化率，在职期间累计为公司带来直接收入超50万。</p>
-                <p>3. 根据关键指标分析，协调候选人和客户之间的双向沟通，支持团队内部项目流程及业务汇报，参与薪酬谈判、背景调查及入职回访，并全程深度参与维护内部数据库及其他团队合作项目。</p>
-                <p>4. 参与公司组织的各类内部培训、行业分享会，通过与行业精英的沟通、访谈，进一步增进行业理解及宏观趋势把控。</p>
-            </div>
-            <div class="card">
-                <h3>中泰证券 - 实习生</h3>
-                <p>2023.07 - 2023.08</p>
-                <p>1. 协助收集和整理8家上市公司财务数据、20+行业报告，根据投资标的特点搭建估值体系及财务模型，辅助开展研究。</p>
-                <p>2. 实盘参与场内交易，通过技术分析软件管理投资组合，期间组合实现2.16%盈利率，深度优化投资、投后管理等能力。</p>
-                <p>3. 完整参与内部培训课程，系统学习新兴金融衍生品、证券交易流程及风控技术，并为路演提供内容支持。</p>
-                <p>4. 根据数据分析结果及访谈报告等，分阶段撰写专题研究报告，实现定量+定性的行研结果高效产出，获组内一致好评。</p>
-            </div>
-            <div class="card">
-                <h3>深圳富尔达 - 实习生</h3>
-                <p>2022.05 - 2022.08</p>
-                <p>1. 通过 eBay 等国际电商平台精准引流，负责细分市场用户数据分析，所在产品线季度同比成交率实现18%涨幅。</p>
-                <p>2. 参与监测季度内大宗商品价格走势及汇率波动，通过内部 SOP 进行成本核算，根据项目优化生产流程及采购活动。</p>
-                <p>3. 全流程负责相应凭证、单据及合同的审核与归档，确保条款合规性；采用 CRM 推进跟单，支持部门背调及末期结算。</p>
-            </div>
-
-            <h2 id="projects">项目经历</h2>
-            <div class="card">
-                <h3>课题研究：数字化转型与企业融资方向 - 课题组成员</h3>
-                <p>2023.11 - 至今</p>
-                <p>1. 研究意义：在我国金融风险多发的背景下，党的二十大报告提出加强金融监管，防范系统性风险。研究数字化转型对企业杠杆融资的影响，有助于识别微观主体背后的系统性金融风险，推动金融监管、金融改革与数字中国建设。</p>
-                <p>2. 研究内容：结合委托代理理论，通过对2010-2022年沪深A股上市公司数据的分析，探讨数字化转型对企业融资杠杆的相关影响，并考察融资约束、经营绩效的影响机制。研究采用文献综述、理论演绎、回归分析和异质性分析等方法。</p>
-                <p>3. 预期成果：探究数字化转型对于企业融资杠杆的传导路径及具体影响效果，并进一步发现数字化转型对不同所有制、行业和地区企业存在的异质性影响。同时，结合研究结果，为企业管理者和政策制定者提供了现有宏观经济层面，如何利用数字化转型有效应对高杠杆问题的新思路，支持企业降低融资成本与风险、提高经营效益，强化财务回报。</p>
-            </div>
-            <div class="card">
-                <h3>English Association - President</h3>
-                <p>2019.10 - 2022.06</p>
-                <p>1. 负责场地申请与物资统筹，成功举办5次校级大型文艺活动，获腾讯“十佳学生社团”，不断扩大社团的校内影响力。</p>
-                <p>2. 参与推进英语文化宣传，协调定期开展校园英语角，累计增加1000+私域粉丝流量，主导舆情管控与形象搭建。</p>
-                <p>3. 处理与校外机构商务对接，两年内签订50+校内外合作项目，累计吸纳约35000元社团活动资金，确保社团发展空间。</p>
-                <p>4. 负责跟进校内200+
