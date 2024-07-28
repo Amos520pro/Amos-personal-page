@@ -14,24 +14,27 @@
         }
         .container {
             text-align: center;
-            margin: 20px;
+            margin: 20px auto;
+            max-width: 800px;
         }
         header {
             background-color: #fff;
-            padding: 10px 0;
+            padding: 20px 0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         nav a {
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
             color: #0071e3;
             font-weight: bold;
+            font-size: 16px;
         }
         footer {
-            background-color: #f5f5f7;
+            background-color: #fff;
             padding: 20px 0;
             text-align: center;
             color: #999;
+            box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
         }
         a {
             color: #0071e3;
@@ -58,6 +61,36 @@
             height: 150px;
             display: block;
             margin: 20px auto;
+            object-fit: cover;
+        }
+        h1, h2, p {
+            margin: 10px 0;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+        .link-section {
+            margin-top: 30px;
+        }
+        .link-section a {
+            display: block;
+            margin: 5px 0;
+            font-size: 16px;
+            color: #0071e3;
+            text-decoration: none;
+        }
+        .link-section a:hover {
+            text-decoration: underline;
         }
     </style>
     <!-- Google tag (gtag.js) -->
@@ -72,22 +105,46 @@
 <body>
     <header>
         <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+            <a href="#home">首页</a>
+            <a href="#about">关于我</a>
+            <a href="#projects">项目</a>
+            <a href="#articles">文章</a>
+            <a href="#contact">联系</a>
         </nav>
     </header>
     <div class="container">
         <img src="https://github.com/Amos520pro/Amos-personal-page/blob/main/%E5%8E%9F%E5%A4%A7%E5%B0%8F.jpg?raw=true" alt="Profile Image" class="profile-img">
         <h1>Hi~这里是Amos</h1>
-        <p>Welcome to my website</p>
-        <h2 style="color: brown">今天你想了解什么内容呢？</h2>
+        <p>欢迎来到我的个人网站</p>
+        <h2>今天你想了解什么内容呢？</h2>
+        <div class="content">
+            <h2 id="projects">项目</h2>
+            <div class="card">
+                <h3>项目一：深圳大学英语协会</h3>
+                <p>作为协会会长，组织开展系列英语文化活动。</p>
+                <a href="https://github.com/Amos520pro/smart-home-control">查看项目详情</a>
+            </div>
+            <div class="card">
+                <h3>项目二：校园创业</h3>
+                <p>利用小程序，推动疫情期间的校内早餐配送服务。</p>
+                <a href="https://github.com/Amos520pro/stock-prediction-ml">查看项目详情</a>
+            </div>
+            <h2 id="articles">文章</h2>
+            <div class="card">
+                <h3>文章一：咨询工作</h3>
+                <p>这篇文章介绍了咨询行业，适合初学者阅读。</p>
+                <a href="https://medium.com/@amos/ml-basics">阅读文章</a>
+            </div>
+            <div class="card">
+                <h3>文章二：大学的学习方向</h3>
+                <p>探讨了大学生如何利用在校资源打磨核心竞争力与可迁移技能。</p>
+                <a href="https://medium.com/@amos/iot-smart-home">阅读文章</a>
+            </div>
+        </div>
     </div>
     <footer>
         <p>Copyright © 2024 Amos</p>
-        <p>Contact: <a href="mailto:linsq2471@gmail.com">linsq2471@gmail.com</a></p>
+        <p>联系我: <a href="mailto:linsq2471@gmail.com">linsq2471@gmail.com</a></p>
     </footer>
 </body>
 </html>
-
